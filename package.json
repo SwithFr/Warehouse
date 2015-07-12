@@ -2,10 +2,10 @@
 	"name": "Warehouse",
 	"main": "index.html",
 	"window": {
-		"toolbar": false,
+		"toolbar": true,
 		"height": 200,
 		"width": 200,
-		"frame": false,
+		"frame": true,
 		"show_in_taskbar": false
 	},
 	"dependencies": {

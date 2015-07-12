@@ -12,6 +12,9 @@
 	var gui = require('nw.gui');
 	var clipboard = gui.Clipboard.get();
 
+	var bCtrlIsPressed = false,
+		bQisPressed = false;
+
 	global.ftp_config = {
 		host: localStorage.getItem( "host" ),
 		port: localStorage.getItem( "port" ),
@@ -104,6 +107,14 @@
 
 	window.addEventListener( "dragover", preventOpeningOfFile );
 	window.addEventListener( "drop", preventOpeningOfFile );
+
+	window.addEventListener( "keydown", function( e ) {
+
+		( e.keyCode == 91 ) && ( bCtrlIsPressed = true );
+		( e.keyCode == 81 ) && ( bQisPressed = true );
+
+		( bCtrlIsPressed ) && ( bQisPressed ) && ( gui.App.quit(); );
+	})
 
 
 
